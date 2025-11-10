@@ -1,9 +1,11 @@
 # 2025.2-Atividades-05-Docker-Django
+
 Atividade avaliativa com Docker e Django
 
 ## Objetivo
 
 Nesta atividade, você irá construir dois Dockerfiles diferentes para uma aplicação Django:
+
 1. **Dockerfile de Desenvolvimento**: Com mapeamento de volumes para desenvolvimento local
 2. **Dockerfile de Produção**: Com cópia completa dos arquivos para deploy
 
@@ -74,11 +76,13 @@ docker run -it --rm -p 8000:8000 -v $(pwd):/app django-dev fish
 ```
 
 **No windows, usar o Power Shell** com o comando abaixo
+
 ```bash
 docker run -it --rm -p 8000:8000 -v ${PWD}:/app django-dev fish
 ```
 
 **Explicação dos parâmetros:**
+
 - `-it`: Modo interativo com terminal
 - `--rm`: Remove o container ao sair
 - `-p 8000:8000`: Mapeia a porta 8000 do container para a porta 8000 do host
@@ -151,6 +155,7 @@ python3 manage.py createsuperuser
 ```
 
 Quando solicitado, preencha:
+
 - **Username**: admin
 - **Email**: (pode deixar em branco ou colocar um email qualquer)
 - **Password**: 321
@@ -205,6 +210,7 @@ python3 manage.py runserver 0.0.0.0:8000
 #### Passo 17: Testar a aplicação
 
 Abra o navegador e acesse:
+
 - **Página inicial**: http://localhost:8000
 - **Admin**: http://localhost:8000/admin (use username: admin, password: 321)
 
@@ -319,6 +325,7 @@ docker run -d -p 8080:8000 --name django-app-prod django-prod
 ```
 
 **Explicação dos parâmetros:**
+
 - `-d`: Executa em modo detached (background)
 - `-p 8080:8000`: Mapeia a porta 8000 do container para a porta 8080 do host
 - `--name django-app-prod`: Nomeia o container
@@ -332,6 +339,7 @@ docker logs django-app-prod
 #### Passo 25: Testar a aplicação em produção
 
 Abra o navegador e acesse:
+
 - **Página inicial**: http://localhost:8080
 - **Admin**: http://localhost:8080/admin (use username: admin, password: 321)
 
@@ -399,6 +407,7 @@ docker logs -f django-app-prod
 ## Entrega
 
 Documente todo o processo realizado, incluindo:
+
 1. Screenshots das páginas funcionando (home e admin)
 2. Conteúdo dos Dockerfiles criados
 3. Comandos utilizados em cada etapa
