@@ -138,6 +138,7 @@ DATABASES = {
 ```
 
 ## Migrações executadas
+
 ```bash
 root@86d0a3b3eb67 /app# python3 manage.py migrate                          
 Operations to perform:
@@ -162,6 +163,7 @@ Running migrations:
   Applying auth.0012_alter_user_first_name_max_length... OK
   Applying sessions.0001_initial... OK
 ```
+
 ## Superusuário criado (username: admin, password: 321)
 
 ```bash
