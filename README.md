@@ -389,20 +389,20 @@ docker logs -f django-app-prod
 
 ### Checklist de Conclusão
 
-- [ ] Dockerfile.dev criado com base em Fedora
-- [ ] Dockerfile.prod criado com base em Fedora
-- [ ] Container de desenvolvimento usa volume mapeado (-v)
-- [ ] Container de produção usa COPY para arquivos
-- [ ] Python e Django instalados
-- [ ] Projeto Django criado (myproject)
-- [ ] Aplicação Django criada (webapp)
-- [ ] SQLite3 configurado (padrão)
-- [ ] Migrações executadas
-- [ ] Superusuário criado (username: admin, password: 321)
-- [ ] View simples criada e testada
-- [ ] Painel admin acessível e funcional
-- [ ] Container de desenvolvimento testado
-- [ ] Container de produção testado
+- [X] Dockerfile.dev criado com base em Fedora
+- [X] Dockerfile.prod criado com base em Fedora
+- [X] Container de desenvolvimento usa volume mapeado (-v)
+- [X] Container de produção usa COPY para arquivos
+- [X] Python e Django instalados
+- [X] Projeto Django criado (myproject)
+- [X] Aplicação Django criada (webapp)
+- [X] SQLite3 configurado (padrão)
+- [X] Migrações executadas
+- [X] Superusuário criado (username: admin, password: 321)
+- [X] View simples criada e testada
+- [X] Painel admin acessível e funcional
+- [X] Container de desenvolvimento testado
+- [X] Container de produção testado
 
 ## Entrega
 
