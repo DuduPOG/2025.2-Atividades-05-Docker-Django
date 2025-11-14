@@ -1,5 +1,5 @@
 # Framework principal
-Django==5.1.2
+Django==5.2.7
 
 # Banco de dados e ORM extra
 dj-database-url==2.3.0           # Facilita configuração via DATABASE_URL

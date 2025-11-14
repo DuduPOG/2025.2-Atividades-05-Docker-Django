@@ -200,8 +200,27 @@ Dockerfile.dev*  app/  requirements.txt*
 ## Container de produção testado
 
 ```bash
-(virtual) PS C:\Users\Windows\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker run -d -p 8080:8000 --name django-app-prod django-prod
-f663d4564649f1bf81c1f7e2b2018332b3a9cf7857a8a62c8a1660e27846329b
+(virtual) PS C:\Users\20242014040005\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker build -f Dockerfile.prod -t django-prod .
+[+] Building 2.8s (11/11) FINISHED                                                                                                                                                                          docker:desktop-linux
+ => [internal] load build definition from Dockerfile.prod                                                                                                                                                                   0.5s
+ => => transferring dockerfile: 641B                                                                                                                                                                                        0.0s 
+ => [internal] load metadata for docker.io/library/fedora:latest                                                                                                                                                            1.3s
+ => [internal] load .dockerignore                                                                                                                                                                                           0.5s
+ => => transferring context: 2B                                                                                                                                                                                             0.0s 
+ => [1/6] FROM docker.io/library/fedora:latest@sha256:aa7befe5cfd1f0e062728c16453cd1c479d4134c7b85eac00172f3025ab0d522                                                                                                      0.0s
+ => => resolve docker.io/library/fedora:latest@sha256:aa7befe5cfd1f0e062728c16453cd1c479d4134c7b85eac00172f3025ab0d522                                                                                                      0.0s 
+ => [internal] load build context                                                                                                                                                                                           0.0s 
+ => CACHED [2/6] WORKDIR /app                                                                                                                                                                                               0.0s 
+ => CACHED [4/6] COPY requirements.txt .                                                                                                                                                                                    0.0s 
+ => CACHED [5/6] RUN pip3 install --no-cache-dir -r requirements.txt                                                                                                                                                        0.0s 
+ => exporting to image                                                                                                                                                                                                      0.1s 
+ => => exporting manifest sha256:ca910069ae13af4f1702dde210fcd881708c33c683fc4138c493c3c63a9bb410                                                                                                                           0.0s 
+ => => exporting attestation manifest sha256:6888674ddad670f25afec751c8ddc9bd3700813cfbda9d6e8e3de20e687944c5                                                                                                               0.0s 
+ => => exporting manifest list sha256:2d63b94efebcdc90819c5b430fcd199643358f7f9239551833bce56c31a8a1e2                                                                                                                      0.0s 
+ => => naming to docker.io/library/django-prod:latest                                                                                                                                                                       0.0s 
+ => => unpacking to docker.io/library/django-prod:latest                                                                                                                                                                    0.0s 
+(virtual) PS C:\Users\20242014040005\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker run -d -p 8080:8000 --name django-app-prod django-prod
+7d8bb6abcebf44bf64186ee6339da8372d62fd4807d205885c756162194251b0
 ```
 
 ## Comandos Usados
@@ -218,13 +237,19 @@ root@86d0a3b3eb67 /app# python3 manage.py runserver 0.0.0.0:8000
 (virtual) PS C:\Users\Windows\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker build -f Dockerfile.prod -t django-prod .
 
 
-(virtual) PS C:\Users\Windows\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker run -d -p 8080:8000 --name django-app-prod django-prod
-f663d4564649f1bf81c1f7e2b2018332b3a9cf7857a8a62c8a1660e27846329b
-(virtual) PS C:\Users\Windows\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker logs django-app-prod
+(virtual) PS C:\Users\20242014040005\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS              PORTS                                         NAMES
+7d8bb6abcebf   django-prod   "python3 manage.py r…"   About a minute ago   Up About a minute   0.0.0.0:8080->8000/tcp, [::]:8080->8000/tcp   django-app-prod
+(virtual) PS C:\Users\20242014040005\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker stop django-app-prod
+django-app-prod
+(virtual) PS C:\Users\20242014040005\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker rm django-app-prod
+django-app-prod
+(virtual) PS C:\Users\20242014040005\Documents\ws-so\2025.2-Atividades-05-Docker-Django\django-docker-project> docker exec -it django-app-prod /bin/bash
+Error response from daemon: No such container: django-app-prod
 ```
 
 ## Dificuldades
 
 - Criar a aplicação no diretório certo;
-- Testar os containers;
+- Testar os containers, resolvido depois de organizar corretamente os diretórios da aplicação;
 - Rodar a aplicação através da imagem construída em Fedora.

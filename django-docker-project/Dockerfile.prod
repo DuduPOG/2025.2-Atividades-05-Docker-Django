@@ -18,11 +18,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Copiar todos os arquivos do projeto
 COPY app/ ./
 
-# Dar permissão de execução ao script
-RUN chmod +x init.sh
-
 # Expor porta 8000
 EXPOSE 8000
 
-# Comando para executar o script de inicialização
-CMD ["./init.sh"]
+# Comando para executar o servidor
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -10,7 +10,7 @@ RUN dnf update -y && \
     dnf clean all
 
 # Instalar Django
-RUN pip3 install Django==4.2.7
+RUN pip3 install Django==5.2.7
 
 # Expor porta 8000
 EXPOSE 8000
