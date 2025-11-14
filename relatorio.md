@@ -252,4 +252,9 @@ Error response from daemon: No such container: django-app-prod
 
 - Criar a aplicação no diretório certo;
 - Testar os containers, resolvido depois de organizar corretamente os diretórios da aplicação;
-- Rodar a aplicação através da imagem construída em Fedora.
+- Rodar a aplicação através da imagem construída em Fedora, resolvido depois de entender com mais clareza os erros de diretórios.
+
+## Diferenças entre os ambientes
+
+- O ambiente de desenvolvimento cria um terminal linux para executar o projeto;
+- O de produção consegue executar a aplicação django diretamente na imagem docker.
